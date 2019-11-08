@@ -1,0 +1,73 @@
+<hr>
+
+<form [formGroup] = "formulario" (ngSubmit)="guardar(nombre.value, entrada.value)">
+  <div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+        <input class="form-control" [ngClass] = "{'is-invalid': !formulario.get('nombre').valid && condicion}"
+        type="text"
+        placeholder="Nombre"
+        formControlName = "nombre" #nombre>
+        <div *ngIf = "formulario.controls['nombre'].errors?.required && condicion"
+        class = "form-control-feedback">
+        Por favor indique el nombre.
+      </div>
+      <div *ngIf = "formulario.controls['nombre'].errors?.minlength && condicion"
+      class = "form-control-feedback">
+      El nombre debe contener por lo menos 5 caracteres.
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+  <label class="col-2 col-form-label">Entrada</label>
+  <div class="col-8">
+    <textarea class="form-control" [ngClass] = "{'is-invalid': !formulario.get('entrada').valid && condicion}"
+    type="textarea"
+    placeholder="Entrada"
+    formControlName = "entrada" #entrada></textarea>
+    <div *ngIf = "formulario.controls['entrada'].errors?.required && condicion"
+    class = "form-control-feedback">
+    Por favor indique la entrada.
+  </div>
+  <div *ngIf = "formulario.controls['entrada'].errors?.minlength && condicion"
+  class = "form-control-feedback">
+  La entrada debe contener por lo menos 10 caracteres.
+</div>
+<div *ngIf = "formulario.controls['entrada'].errors?.maxlength && condicion"
+class = "form-control-feedback">
+La entrada debe contener máximo 30 caracteres.
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="form-group row">
+  <label class="col-2 col-form-label">&nbsp;</label>
+  <div class="input-group col-md-8">
+    <button type="submit" class="btn btn-outline-primary">
+      Guardar
+    </button>
+  </div>
+</div>
+</form>
+<hr>
+
+<ul class="list-group" *ngFor="let comentario of comentarios; let i = index">
+  <li class="list-group-item">
+
+    <ul>
+      <h1>{{comentario.nombre}}</h1>
+
+    </ul>
+    <ul>
+       {{ comentario.fecha | date:'medium'}}
+    </ul>
+    <ul>
+      {{comentario.entrada}}
+    </ul>
+
+  </li>
+</ul>
