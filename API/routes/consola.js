@@ -4,6 +4,27 @@ var app = express();
 
 var Consola = require('../models/consola');
 
+app.get('/', (req, res, next) => {
+
+    Consola.find( {}, 'nombre imagen fichaTecnica',(err, consola) => {
+
+
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                mensaje: 'Error cargando consolas',
+                errors: err
+            });
+        }
+
+		return res.status(200).json({
+			ok: true,
+			consola: consola
+		});
+
+
+	});
+});
 
 app.get('/:id', (req, res, next) => {
 	var id = req.params.id;

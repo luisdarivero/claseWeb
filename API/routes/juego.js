@@ -7,7 +7,7 @@ var Juego = require('../models/juego');
 
 app.get('/regex/:rx', (req, res, next) => {
 	var rx = req.params.rx;
-    Juego.find( {'nombre' : new RegExp(rx, 'i')},'nombre imagenDePortada', (err, juegos) => {
+    Juego.find( {'nombre' : new RegExp(rx, 'i')},'nombre imagenDePortada developer fechaDeLanzamiento', (err, juegos) => {
 
 
         if (err) {

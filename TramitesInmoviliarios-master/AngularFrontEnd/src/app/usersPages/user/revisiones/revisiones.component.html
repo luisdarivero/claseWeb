@@ -1,0 +1,48 @@
+<div class="col-12">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Revisiones Activas</h1>
+            <h3 class="card-subtitle">A continuación puedes observar tus revisiones activas</h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+
+                            <th>Tipo de asesoría</th>
+                            <th>Fecha de creación</th>
+                            <th>Estatus</th>
+                            <th>Más información</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor="let revision of revisiones; let i = index">
+                            <td>
+                                {{revision.asesoria.nombre}}
+                            </td>
+                            <td>
+                                <span class="text-muted">
+                                    <i class="fa fa-clock-o"></i>
+                                    {{revision.fechaCreacion  | date :'dd-MMM-yyyy'}}
+                                </span>
+                            </td>
+                            <td>
+                                <div class="label label-table label-success">
+                                    ESTATUS
+                                </div>
+                            </td>
+
+                            <td>
+                                <button type="button" class="btn waves-effect waves-light btn-outline-info">
+                                    Información de la revisión
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
