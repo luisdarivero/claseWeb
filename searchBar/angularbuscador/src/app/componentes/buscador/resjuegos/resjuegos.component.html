@@ -6,7 +6,7 @@
 <div class="card-body">
 <h5 class="card-title">{{juego.nombre}}</h5>
 <p class="card-text">{{juego.developer}}</p>
-<p class="card-text">{{juego.fechaDeLanzamiento}}</p>
+<p class="card-text">{{juego.fechaDeLanzamiento | date}}</p>
 <!-- Utilizamos '/infoconsola' en lugar de 'infoconsola' para evitar que en el
 archivo 'app.routes.ts' se tenga que declarar como 'consolas/infoconsola/:id' de
 tal forma que la URL quedaría como http://localhost:4200/infoconsola/0 -->

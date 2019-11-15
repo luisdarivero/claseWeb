@@ -10,7 +10,6 @@ import { ConsolasService, Consola } from '../../servicios/consolas.service';
 export class JuegoComponent implements OnInit {
     juegoJson:JSON;
     juego:any = [];
-    idConsola:string;
     idJuego:string;
 
     constructor(private activatedRoute:ActivatedRoute,private consolasService:ConsolasService) {
@@ -20,8 +19,7 @@ export class JuegoComponent implements OnInit {
     ngOnInit() {
         this.activatedRoute.params.subscribe(params => {
             this.idJuego = params['idJuego'];
-            this.idConsola = params['idConsola'];
-            this.consolasService.buscarJuegoEspecifico(this.idConsola,this.idJuego).subscribe(
+            this.consolasService.buscarJuegoPorID(this.idJuego).subscribe(
                 juego =>{
                     this.juegoJson = <JSON>(juego);
                     this.juego = this.juegoJson["juego"];

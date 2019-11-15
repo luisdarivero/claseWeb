@@ -25,10 +25,32 @@ app.get('/regex/:rx', (req, res, next) => {
 
 
 	});
+
+
 });
 
+app.get('/:id', (req, res, next) => {
+	var id = req.params.id;
+    Juego.findById(id,'nombre imagenDePortada developer fechaDeLanzamiento imagenes ligas', (err, juego) => {
 
 
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                mensaje: 'Error cargando juego',
+                errors: err
+            });
+        }
 
+		return res.status(200).json({
+			ok: true,
+			juego: juego
+		});
+
+
+	});
+
+
+});
 
 module.exports = app;
