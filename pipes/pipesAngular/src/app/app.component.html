@@ -1,0 +1,43 @@
+<div class="container">
+
+  <h1>Uppercase</h1>
+  <hr>
+  valor original: {{juego}}
+  <hr>
+  {{juego}} | uppercase = {{juego|uppercase}}
+  <hr>
+
+  <h1>lowercase</h1>
+  <hr>
+  valor original: {{juego}}
+  <hr>
+  {{juego}} | lowercase = {{juego|lowercase}}
+  <hr>
+
+
+  <h1>Slice</h1>
+  <hr>
+  valor original: {{lista}}
+  <hr>
+  {{lista}} | slice:7 = {{lista|slice:7}}
+  <hr>
+  {{lista}} | slice:0:7 = {{lista|slice:0:7}}
+  <hr>
+  Slice con ngfor: <br>
+  valor Original (arreglo): {{lista}}
+  <br>
+  Aplicando ngfor con: "let item of lista | slice:1:10"
+  <ul>
+    <li *ngFor="let item of lista | slice:1:10">{{item}}</li>
+  </ul>
+
+  <h1>Decimal</h1>
+  <hr>
+    Valor Original: {{numero}}
+    <br>
+    {{numero}} | number = {{ numero | number}}
+    <br>
+    {{numero}} | number: '5.0-0' = {{numero | number: '5.0-0'}}
+  <hr>
+
+</div>
