@@ -1,0 +1,245 @@
+<div class="container">
+    <!-- ====================================== -->
+    <!-- Empieza Encabezado -->
+    <!-- ====================================== -->
+    <div class="py-5 text-center">
+        <h1>Crear registro de un videojuego</h1>
+        <p class="lead">Por favor rellena los campos correctamente para registrar un videojuego</p>
+    </div>
+    <!-- ====================================== -->
+    <!-- Termina Encabezado -->
+    <!-- ====================================== -->
+
+    <div class="mb-3">
+        <!-- ====================================== -->
+        <!-- Empieza formulario -->
+        <!-- ====================================== -->
+        <form [formGroup]="registrationForm" (ngSubmit)="send()">
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de ID del videojuego -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="id">
+                    ID:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "id"
+                [ngClass] = "{'is-invalid': !registrationForm.get('id').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['id'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+				<div *ngIf = "registrationForm.controls['id'].errors?.pattern  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo debe ser un número entero.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de ID del videojuego -->
+            <!-- ====================================== -->
+
+            <!-- ====================================== -->
+            <!-- Empieza sección de nombre del videojuego -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="nombre">
+                    Nombre:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "nombre"
+                [ngClass] = "{'is-invalid': !registrationForm.get('nombre').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['nombre'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de nombre del videojuego -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de imagen de portada -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="imagenPortada">
+                    Imagen de portada:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "imagenPortada"
+                [ngClass] = "{'is-invalid': !registrationForm.get('imagenPortada').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['imagenPortada'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de imagen de portada -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de Developer -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="developer">
+                    Developer:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "developer"
+                [ngClass] = "{'is-invalid': !registrationForm.get('developer').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['developer'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de Developer -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de Imagen 1 -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="imagen1">
+                    Imagen 1:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "imagen1"
+                [ngClass] = "{'is-invalid': !registrationForm.get('imagen1').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['imagen1'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de imagen 1 -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de Imagen 2 -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="imagen2">
+                    Imagen 2:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "imagen2"
+                [ngClass] = "{'is-invalid': !registrationForm.get('imagen2').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['imagen2'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de imagen 2 -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de Imagen 3 -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="imagen3">
+                    Imagen 3:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "imagen3"
+                [ngClass] = "{'is-invalid': !registrationForm.get('imagen3').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['imagen3'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de imagen 3 -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de link1 -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="liga1">
+                    Liga 1:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "liga1"
+                [ngClass] = "{'is-invalid': !registrationForm.get('liga1').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['liga1'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de link1 -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de link2 -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="liga2">
+                    Liga 2:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "liga2"
+                [ngClass] = "{'is-invalid': !registrationForm.get('liga2').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['liga2'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de link2 -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de link3 -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="liga3">
+                    Liga 3:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "liga3"
+                [ngClass] = "{'is-invalid': !registrationForm.get('liga3').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['liga3'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de link3 -->
+            <!-- ====================================== -->
+
+            <hr class="mb-4">
+            <div *ngIf = "buttonPressed && !registrationForm.valid"
+            class = "form-control-feedback">
+                <p style="color:red;">Por favor llene los campos necesarios correctamente</p>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Crear Videojuego</button>
+        </form>
+        <!-- ====================================== -->
+        <!-- Termina formulario -->
+        <!-- ====================================== -->
+    </div>
+
+</div>

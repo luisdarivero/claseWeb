@@ -53,4 +53,44 @@ app.get('/:id', (req, res, next) => {
 
 });
 
+//crear un nuevo juego
+app.post('/', (req, res) => {
+
+    var body = req.body;
+
+    var juego = new Juego({
+		_id: body.id,
+        nombre: body.nombre,
+        imagenDePortada: body.imagenPortada,
+        developer: body.developer,
+		fechaDeLanzamiento: Date.now(),
+		imagenes: [
+			body.imagen1, body.imagen2, body.imagen3
+		],
+		ligas:[
+			body.liga1,body.liga2,body.liga3
+		]
+
+    });
+
+    juego.save((err, juegoGuardado) => {
+
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                mensaje: 'Error al crear juego',
+                errors: err
+            });
+        }
+
+        res.status(201).json({
+            ok: true,
+            asesoria: juegoGuardado
+        });
+
+
+    });
+
+});
+
 module.exports = app;

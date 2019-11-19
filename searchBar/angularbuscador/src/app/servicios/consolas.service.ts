@@ -55,6 +55,11 @@ export class ConsolasService {
     //Terminan nuevos servicios
     //=========================
 
+    crearJuego(datosJuego: any){
+        let url = this.URL_SERVICIOS + 'juego';
+        return this.http.post(url, datosJuego);
+    }
+
 
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConsolasService, Consola } from '../../servicios/consolas.service';
+import { ConsolasService} from '../../servicios/consolas.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ConsolasService, Consola } from '../../servicios/consolas.service';
+import { ConsolasService} from '../../servicios/consolas.service';
 
 @Component({
     selector: 'app-juego',

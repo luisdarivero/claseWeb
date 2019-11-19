@@ -20,6 +20,9 @@ import { ResconsolasComponent } from './componentes/buscador/resconsolas/rescons
 import { ResjuegosComponent } from './componentes/buscador/resjuegos/resjuegos.component';
 import { BlogComponent } from './componentes/blog/blog.component';
 
+import{AdministracionModule} from './componentes/administracion/administracion.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,7 @@ import { BlogComponent } from './componentes/blog/blog.component';
   imports: [
     BrowserModule,
     APP_ROUTING,
-    BrowserModule,FormsModule,ReactiveFormsModule,HttpClientModule
+    FormsModule,ReactiveFormsModule,HttpClientModule,AdministracionModule
   ],
   providers: [
   ],

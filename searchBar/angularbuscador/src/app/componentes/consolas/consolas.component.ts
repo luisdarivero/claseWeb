@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConsolasService, Consola } from '../../servicios/consolas.service';
+import { ConsolasService } from '../../servicios/consolas.service';
 
 @Component({
     selector: 'app-consolas',
@@ -8,7 +8,7 @@ import { ConsolasService, Consola } from '../../servicios/consolas.service';
 })
 export class ConsolasComponent implements OnInit {
 
-    consolas:Consola[] = [];
+    consolas:any = [];
     consolasJson:JSON;
 
     constructor( private consolasService:ConsolasService ) { }
