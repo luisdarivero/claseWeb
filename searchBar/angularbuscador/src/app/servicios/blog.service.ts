@@ -9,9 +9,7 @@ export class BlogService {
 
     URL_SERVICIOS:string = "http://localhost:3000/";
 
-    private comentarios:Comments[] = [
 
-    ];
 
     constructor(private http: HttpClient, private router: Router) {
         console.log("BlogService Creado...");
@@ -29,26 +27,6 @@ export class BlogService {
     }
 
     //Terminan metodos de request a API
-    obtieneBlog():Comments[]{
-        return this.comentarios;
-    }
 
-    addComentario(nombre:string, entrada:string){
-        let date: Date = new Date();
-        let nuevoComentario: Comments = {
-            nombre: nombre,
-            entrada:entrada,
-            fecha: date
-        };
-        //console.log(nuevoComentario);
-        this.comentarios.push(nuevoComentario);
-        console.log(this.comentarios);
-    }
 
-}
-
-export interface Comments{
-    nombre:string;
-    entrada:string;
-    fecha:Date;
 }
