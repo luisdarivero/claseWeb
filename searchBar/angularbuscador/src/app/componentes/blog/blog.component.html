@@ -5,15 +5,15 @@
     <div class="form-group row">
       <label class="col-2 col-form-label">Nombre</label>
       <div class="col-8">
-        <input class="form-control" [ngClass] = "{'is-invalid': !formulario.get('nombre').valid && condicion}"
+        <input class="form-control" [ngClass] = "{'is-invalid': !formulario.get('autor').valid && condicion}"
         type="text"
         placeholder="Nombre"
-        formControlName = "nombre" #nombre>
-        <div *ngIf = "formulario.controls['nombre'].errors?.required && condicion"
+        formControlName = "autor" #nombre>
+        <div *ngIf = "formulario.controls['autor'].errors?.required && condicion"
         class = "form-control-feedback">
         Por favor indique el nombre.
       </div>
-      <div *ngIf = "formulario.controls['nombre'].errors?.minlength && condicion"
+      <div *ngIf = "formulario.controls['autor'].errors?.minlength && condicion"
       class = "form-control-feedback">
       El nombre debe contener por lo menos 5 caracteres.
     </div>
@@ -23,19 +23,19 @@
 <div class="form-group row">
   <label class="col-2 col-form-label">Entrada</label>
   <div class="col-8">
-    <textarea class="form-control" [ngClass] = "{'is-invalid': !formulario.get('entrada').valid && condicion}"
+    <textarea class="form-control" [ngClass] = "{'is-invalid': !formulario.get('texto').valid && condicion}"
     type="textarea"
     placeholder="Entrada"
-    formControlName = "entrada" #entrada></textarea>
-    <div *ngIf = "formulario.controls['entrada'].errors?.required && condicion"
+    formControlName = "texto" #entrada></textarea>
+    <div *ngIf = "formulario.controls['texto'].errors?.required && condicion"
     class = "form-control-feedback">
     Por favor indique la entrada.
   </div>
-  <div *ngIf = "formulario.controls['entrada'].errors?.minlength && condicion"
+  <div *ngIf = "formulario.controls['texto'].errors?.minlength && condicion"
   class = "form-control-feedback">
   La entrada debe contener por lo menos 10 caracteres.
 </div>
-<div *ngIf = "formulario.controls['entrada'].errors?.maxlength && condicion"
+<div *ngIf = "formulario.controls['texto'].errors?.maxlength && condicion"
 class = "form-control-feedback">
 La entrada debe contener máximo 30 caracteres.
 </div>
@@ -59,14 +59,14 @@ La entrada debe contener máximo 30 caracteres.
   <li class="list-group-item">
 
     <ul>
-      <h1>{{comentario.nombre}}</h1>
+      <h1>{{comentario.autor}}</h1>
 
     </ul>
     <ul>
        {{ comentario.fecha | date:'medium'}}
     </ul>
     <ul>
-      {{comentario.entrada}}
+      {{comentario.texto}}
     </ul>
 
   </li>

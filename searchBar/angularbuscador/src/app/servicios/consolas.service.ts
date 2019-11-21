@@ -60,6 +60,11 @@ export class ConsolasService {
         return this.http.post(url, datosJuego);
     }
 
+    crearConsola(datosConsola: any){
+        let url = this.URL_SERVICIOS + 'consola';
+        return this.http.post(url, datosConsola);
+    }
+
 
 
 }

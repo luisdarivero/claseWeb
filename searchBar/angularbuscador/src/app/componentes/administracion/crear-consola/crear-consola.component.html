@@ -1,1 +1,139 @@
-<p>crear-consola works!</p>
+<div class="container">
+    <!-- ====================================== -->
+    <!-- Empieza Encabezado -->
+    <!-- ====================================== -->
+    <div class="py-5 text-center">
+        <h1>Crear registro de una consola</h1>
+        <p class="lead">Por favor rellena los campos correctamente para registrar una consola</p>
+    </div>
+    <!-- ====================================== -->
+    <!-- Termina Encabezado -->
+    <!-- ====================================== -->
+
+    <div class="mb-3">
+        <!-- ====================================== -->
+        <!-- Empieza formulario -->
+        <!-- ====================================== -->
+        <form [formGroup]="registrationForm" (ngSubmit)="send()">
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de ID de la consola -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="_id">
+                    ID:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "_id"
+                [ngClass] = "{'is-invalid': !registrationForm.get('_id').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['_id'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+				
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de ID de la consola -->
+            <!-- ====================================== -->
+
+            <!-- ====================================== -->
+            <!-- Empieza sección de nombre de la consola -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="nombre">
+                    Nombre:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "nombre"
+                [ngClass] = "{'is-invalid': !registrationForm.get('nombre').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['nombre'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de nombre de la consola -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de imagen -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="imagen">
+                    Imagen de portada:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "imagen"
+                [ngClass] = "{'is-invalid': !registrationForm.get('imagen').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['imagen'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de imagen -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de ficha tecnica -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="fichaTecnica">
+                    Ficha Técnica:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "fichaTecnica"
+                [ngClass] = "{'is-invalid': !registrationForm.get('fichaTecnica').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['fichaTecnica'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de ficha tecnica -->
+            <!-- ====================================== -->
+
+			<!-- ====================================== -->
+            <!-- Empieza sección de juegos -->
+            <!-- ====================================== -->
+            <div class="mb-3">
+                <!-- nombre del responsable -->
+                <label for="juegos">
+                    Juegos:</label>
+                <input
+                type="text"
+                class="form-control"
+                formControlName = "juegos"
+                [ngClass] = "{'is-invalid': !registrationForm.get('juegos').valid  && buttonPressed}">
+                <div *ngIf = "registrationForm.controls['juegos'].errors?.required  && buttonPressed"
+                    class = "form-control-feedback">
+                    Este campo es requerido.
+                </div>
+            </div>
+			<!-- ====================================== -->
+            <!-- Termina sección de juegos -->
+            <!-- ====================================== -->
+
+
+
+            <hr class="mb-4">
+            <div *ngIf = "buttonPressed && !registrationForm.valid"
+            class = "form-control-feedback">
+                <p style="color:red;">Por favor llene los campos necesarios correctamente</p>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Crear Consola</button>
+        </form>
+        <!-- ====================================== -->
+        <!-- Termina formulario -->
+        <!-- ====================================== -->
+    </div>
+
+</div>

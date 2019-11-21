@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators, FormGroup, FormControl} from '@angular/forms'
 import { ConsolasService } from '../../../servicios/consolas.service';
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-crear-videojuego',
     templateUrl: './crear-videojuego.component.html',
@@ -13,7 +14,7 @@ export class CrearVideojuegoComponent implements OnInit {
     //Trigger para revisar el estado del formulario
     buttonPressed: boolean = false;
 
-    constructor(private fb: FormBuilder,private consolasService:ConsolasService) { }
+    constructor(private fb: FormBuilder,private consolasService:ConsolasService,private router: Router) { }
 
     ngOnInit() {
         //Se declara un diccionario con los form controls necesarios
@@ -43,9 +44,12 @@ export class CrearVideojuegoComponent implements OnInit {
 
     guardarRegistro(datos: any){
         let result = this.consolasService.crearJuego(datos)
-        .subscribe( (resp: any) => {
-          console.log(resp);
-        });
+        .subscribe(
+            (resp: any) => {
+                console.log(resp);
+                this.router.navigate(['/administracion']);
+            }
+        );
     }
 
 }

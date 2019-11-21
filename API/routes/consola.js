@@ -133,6 +133,45 @@ app.get('/juego/:consolaid/:juegoid', (req, res, next) => {
 		);
 });
 
+//crear una nueva consola
+app.post('/', (req, res) => {
+
+    var body = req.body;
+    var listaJuegos = body.juegos;
+    listaJuegos = listaJuegos.split(',');
+    var listaJuegos = listaJuegos.map(function (x) {
+        return parseInt(x, 10);
+    });
+
+    var consola = new Consola({
+		_id: body._id,
+        nombre: body.nombre,
+        imagen: body.imagen,
+        fichaTecnica: body.fichaTecnica,
+		juegos: listaJuegos
+
+    });
+
+    consola.save((err, consolaGuardada) => {
+
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                mensaje: 'Error al crear la consola',
+                errors: err
+            });
+        }
+
+        res.status(201).json({
+            ok: true,
+            consola: consolaGuardada
+        });
+
+
+    });
+
+});
+
 
 
 module.exports = app;

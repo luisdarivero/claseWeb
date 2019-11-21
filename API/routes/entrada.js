@@ -27,7 +27,37 @@ app.get('/', (req, res, next) => {
 	});
 });
 
+//crear una nueva consola
+app.post('/', (req, res) => {
 
+    var body = req.body;
+
+    var entrada = new Entrada({
+		autor: body.autor,
+        texto: body.texto,
+        fecha: new Date()
+
+    });
+
+    entrada.save((err, entradaGuardada) => {
+
+        if (err) {
+            return res.status(400).json({
+                ok: false,
+                mensaje: 'Error al crear la entrada',
+                errors: err
+            });
+        }
+
+        res.status(201).json({
+            ok: true,
+            entrada: entradaGuardada
+        });
+
+
+    });
+
+});
 
 
 

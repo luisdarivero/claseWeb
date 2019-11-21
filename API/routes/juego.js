@@ -85,7 +85,7 @@ app.post('/', (req, res) => {
 
         res.status(201).json({
             ok: true,
-            asesoria: juegoGuardado
+            juego: juegoGuardado
         });
 
 
